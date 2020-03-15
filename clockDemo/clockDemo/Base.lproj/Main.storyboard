@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dg4-NM-SyJ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Countdown-->
+        <scene sceneID="wCZ-fJ-aeO">
+            <objects>
+                <viewController id="C2f-E2-DaO" customClass="CountdownVC" customModule="clockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcp-Xp-4w3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvh-MQ-EMc">
+                                <rect key="frame" x="16" y="20" width="343" height="184"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIT-xa-Pzg">
+                                <rect key="frame" x="16" y="212" width="157" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="I9h-lH-jYH"/>
+                                    <constraint firstAttribute="width" constant="157" id="j4e-At-4N2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startClicked:" destination="C2f-E2-DaO" eventType="touchUpInside" id="nh1-bo-5IV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-Ua-wnP">
+                                <rect key="frame" x="190" y="212" width="169" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetClicked:" destination="C2f-E2-DaO" eventType="touchUpInside" id="cft-Xn-fW9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Start Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRs-fv-tvM">
+                                <rect key="frame" x="16" y="316" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ckg-Ua-wnP" firstAttribute="leading" secondItem="aIT-xa-Pzg" secondAttribute="trailing" constant="17" id="4NY-UW-giB"/>
+                            <constraint firstItem="odg-c3-UIC" firstAttribute="bottom" secondItem="aIT-xa-Pzg" secondAttribute="bottom" constant="370" id="7lF-gh-gpq"/>
+                            <constraint firstItem="aIT-xa-Pzg" firstAttribute="top" secondItem="Jvh-MQ-EMc" secondAttribute="bottom" constant="8" symbolic="YES" id="8d6-In-V2m"/>
+                            <constraint firstItem="Jvh-MQ-EMc" firstAttribute="trailing" secondItem="xcp-Xp-4w3" secondAttribute="trailingMargin" id="QjP-Os-YeB"/>
+                            <constraint firstItem="Jvh-MQ-EMc" firstAttribute="trailing" secondItem="Ckg-Ua-wnP" secondAttribute="trailing" id="SjK-7P-tgK"/>
+                            <constraint firstItem="Jvh-MQ-EMc" firstAttribute="leading" secondItem="xcp-Xp-4w3" secondAttribute="leadingMargin" id="bHA-8o-Cg5"/>
+                            <constraint firstItem="Jvh-MQ-EMc" firstAttribute="leading" secondItem="aIT-xa-Pzg" secondAttribute="leading" id="kFt-5g-nkr"/>
+                            <constraint firstItem="aIT-xa-Pzg" firstAttribute="baseline" secondItem="Ckg-Ua-wnP" secondAttribute="baseline" id="u40-Hh-xR9"/>
+                            <constraint firstItem="Jvh-MQ-EMc" firstAttribute="top" secondItem="xcp-Xp-4w3" secondAttribute="top" constant="20" symbolic="YES" id="zaQ-JU-5zo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="odg-c3-UIC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Countdown" image="c.circle.fill" catalog="system" id="XJ7-jY-11V"/>
+                    <connections>
+                        <outlet property="resetOutlet" destination="Ckg-Ua-wnP" id="gza-Ai-BeF"/>
+                        <outlet property="startOutlet" destination="aIT-xa-Pzg" id="cKl-13-QQY"/>
+                        <outlet property="timeField" destination="YRs-fv-tvM" id="I8T-Mj-utA"/>
+                        <outlet property="timeLabel" destination="Jvh-MQ-EMc" id="y5N-w3-aAB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bd1-jo-lkq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="290"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="3ZI-47-9Ll">
+            <objects>
+                <viewController id="UOU-Ne-1u2" customClass="StopwatchVC" customModule="clockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Zj-ad-fLE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-kI-W7Q">
+                                <rect key="frame" x="16" y="415" width="88" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="Fdp-pS-67Y"/>
+                                    <constraint firstAttribute="height" constant="36" id="HGw-Hj-S4Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startClicked:" destination="UOU-Ne-1u2" eventType="touchUpInside" id="CTM-IN-hTR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aoc-mj-5OC">
+                                <rect key="frame" x="143" y="415" width="88" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseClicked:" destination="UOU-Ne-1u2" eventType="touchUpInside" id="NB6-V2-aRd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjs-zb-1mV">
+                                <rect key="frame" x="16" y="106" width="343" height="223"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9V7-TB-YaE">
+                                <rect key="frame" x="271" y="415" width="88" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetClicked:" destination="UOU-Ne-1u2" eventType="touchUpInside" id="Skt-RH-naP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bjs-zb-1mV" firstAttribute="trailing" secondItem="3Zj-ad-fLE" secondAttribute="trailingMargin" id="2kX-0o-ri0"/>
+                            <constraint firstItem="bjs-zb-1mV" firstAttribute="trailing" secondItem="9V7-TB-YaE" secondAttribute="trailing" id="Qte-Um-uN6"/>
+                            <constraint firstItem="bjs-zb-1mV" firstAttribute="centerX" secondItem="Aoc-mj-5OC" secondAttribute="centerX" id="T3a-Fn-IA8"/>
+                            <constraint firstItem="bjs-zb-1mV" firstAttribute="top" secondItem="3Vz-bO-pYy" secondAttribute="top" constant="106" id="Yqx-IG-2zT"/>
+                            <constraint firstItem="MH3-kI-W7Q" firstAttribute="baseline" secondItem="Aoc-mj-5OC" secondAttribute="baseline" id="jWc-cO-bpN"/>
+                            <constraint firstItem="9V7-TB-YaE" firstAttribute="leading" secondItem="Aoc-mj-5OC" secondAttribute="trailing" constant="40" id="mUS-cW-0vN"/>
+                            <constraint firstItem="bjs-zb-1mV" firstAttribute="leading" secondItem="3Zj-ad-fLE" secondAttribute="leadingMargin" id="nMY-f3-Ddo"/>
+                            <constraint firstItem="Aoc-mj-5OC" firstAttribute="leading" secondItem="MH3-kI-W7Q" secondAttribute="trailing" constant="39" id="nVb-OM-wX6"/>
+                            <constraint firstItem="Aoc-mj-5OC" firstAttribute="baseline" secondItem="9V7-TB-YaE" secondAttribute="baseline" id="reX-mX-xdo"/>
+                            <constraint firstItem="3Vz-bO-pYy" firstAttribute="bottom" secondItem="MH3-kI-W7Q" secondAttribute="bottom" constant="167" id="t2h-MY-x8M"/>
+                            <constraint firstItem="bjs-zb-1mV" firstAttribute="leading" secondItem="MH3-kI-W7Q" secondAttribute="leading" id="x4g-uX-Kta"/>
+                            <constraint firstItem="MH3-kI-W7Q" firstAttribute="top" secondItem="bjs-zb-1mV" secondAttribute="bottom" constant="86" id="yQ4-bl-hbS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Vz-bO-pYy"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="s.circle.fill" catalog="system" id="BNN-0A-YMN"/>
+                    <connections>
+                        <outlet property="pauseOutlet" destination="Aoc-mj-5OC" id="cCc-2n-EXO"/>
+                        <outlet property="resetOutlet" destination="9V7-TB-YaE" id="Waf-lR-qIq"/>
+                        <outlet property="startOutlet" destination="MH3-kI-W7Q" id="ZdB-Wj-fP7"/>
+                        <outlet property="timeLabel" destination="bjs-zb-1mV" id="MLJ-05-Zaa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M1j-57-g5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="-166"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="CBw-nZ-aZn">
+            <objects>
+                <tabBarController id="Dg4-NM-SyJ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JJB-96-8dQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="UOU-Ne-1u2" kind="relationship" relationship="viewControllers" id="A9r-6V-7Dd"/>
+                        <segue destination="C2f-E2-DaO" kind="relationship" relationship="viewControllers" id="GUS-BI-2JD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTQ-YN-m59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="130"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="c.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="s.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
